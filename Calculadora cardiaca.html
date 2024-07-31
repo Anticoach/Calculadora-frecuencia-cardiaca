@@ -8,6 +8,7 @@
   <meta name="CocoaVersion" content="2487.4">
   <style type="text/css">
     p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
   </style>
 </head>
 <body>
@@ -18,12 +19,15 @@
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Calculadora de Frecuencia Cardiaca&lt;/title&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: Arial, sans-serif; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container { max-width: 600px; margin: 50px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }</p>
 <p class="p1"><span class="Apple-converted-space">        </span>.form-group { margin-bottom: 15px; }</p>
 <p class="p1"><span class="Apple-converted-space">        </span>label { display: block; margin-bottom: 5px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>input { width: 100%; padding: 8px; box-sizing: border-box; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>button { padding: 10px 15px; background-color: #007BFF; color: white; border: none; cursor: pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 5px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button { padding: 10px 15px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover { background-color: #0056b3; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2 { text-align: center; margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h3 { text-align: center; margin-top: 20px; }</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
 <p class="p1">&lt;/head&gt;</p>
 <p class="p1">&lt;body&gt;</p>
@@ -49,6 +53,10 @@
 <p class="p1"><span class="Apple-converted-space">            </span>const age = document.getElementById('age').value;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>const rhr = document.getElementById('rhr').value;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>const intensity = document.getElementById('intensity').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!age || !rhr || !intensity) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert("Por favor, complete todos los campos.");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
 <p class="p1"><span class="Apple-converted-space">            </span>const maxHR = 220 - age;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>const karvonenHR = parseInt(rhr) + ((maxHR - rhr) * intensity);</p>
 <p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('result').innerText = `Fórmula Clásica: ${maxHR}, Fórmula Karvonen: ${karvonenHR.toFixed(2)}`;</p>
@@ -56,5 +64,6 @@
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
 <p class="p1">&lt;/body&gt;</p>
 <p class="p1">&lt;/html&gt;</p>
+<p class="p2"><br></p>
 </body>
 </html>
